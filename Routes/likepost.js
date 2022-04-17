@@ -15,7 +15,7 @@ router.post("/like-post", cors(), async (req, res) => {
     };
     try {
       const response = await axios.post(
-        `${process.env.ENDPOINT_URL}/likes-new`,
+        `https://spilleetapi.spilleet.com/likes-new`,
         JSON.stringify(body),
         {
           headers: {
@@ -31,7 +31,7 @@ router.post("/like-post", cors(), async (req, res) => {
       };
       // get creator subscription
       const creatorSubObj = await axios.post(
-        `${process.env.ENDPOINT_URL}/getUserSubscription`,
+        `https://spilleetapi.spilleet.com/getUserSubscription`,
         JSON.stringify(subobjdetails),
         {
           headers: {
