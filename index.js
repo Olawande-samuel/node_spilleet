@@ -9,7 +9,7 @@ const getallsubscription = require('./Routes/getallsubs');
 const createpost = require('./Routes/createpost')
 const addcomment = require('./Routes/addcomment')
 const corsOption = {
-    origin: 'http://localhost:3000',
+    origin: 'https://spilleet.com',
     credentials: true, 
     optionSuccessStatus: 200
 }
@@ -30,6 +30,6 @@ app.use('/api', createpost)
 app.use('/api', addcomment)
 
 
-app.listen(5000, () => {
-    console.log("app started on port: 5000")
+app.listen(process.env.PORT || 5000, () => {
+    console.log("app started")
 })
