@@ -21,7 +21,7 @@ router.post("/create-post", cors(), async (req, res, next) => {
           },
         }
         );
-        res.status(200).json({ success: true });
+        res.status(200).json(getAllSubs.data);
 
       if (getAllSubs.data.success !== false) {
         getAllSubs.data.forEach((item) => {
@@ -35,7 +35,7 @@ router.post("/create-post", cors(), async (req, res, next) => {
         });
       }
     } catch (error) {
-      res.status(500).json({ success: false });
+      res.status(500).json({error: error.message });
     }
   }
 });
