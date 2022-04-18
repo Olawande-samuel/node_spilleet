@@ -13,7 +13,7 @@ router.post("/create-post", cors(), async (req, res, next) => {
   if (Object.keys(req.body).length > 0) {
     try {
       const getAllSubs = await axios.post(
-        `https://spilleetapi.spilleet.com/getAllSubscriptions`,
+        `https://backend.spilleet.com/getAllSubscriptions`,
         JSON.stringify({ apptoken: apptoken, usertoken: usertoken }),
         {
           headers: {

@@ -4,6 +4,8 @@ const { default: axios } = require("axios");
 const router = express.Router();
 const headers = require("../headers/headers");
 const webpush = require("../WP/notifications");
+
+
 router.post("/like-post", cors(), async (req, res) => {
   const { usertoken, apptoken, cnt_id, creator } = req.body;
 
@@ -15,7 +17,7 @@ router.post("/like-post", cors(), async (req, res) => {
     };
     try {
       const response = await axios.post(
-        `https://spilleetapi.spilleet.com/likes-new`,
+        `https://backend.spilleet.com/likes-new`,
         JSON.stringify(body),
         {
           headers: {
@@ -31,7 +33,7 @@ router.post("/like-post", cors(), async (req, res) => {
       };
       // get creator subscription
       const creatorSubObj = await axios.post(
-        `https://spilleetapi.spilleet.com/getUserSubscription`,
+        `https://backend.spilleet.com/getUserSubscription`,
         JSON.stringify(subobjdetails),
         {
           headers: {

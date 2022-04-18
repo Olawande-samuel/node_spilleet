@@ -15,7 +15,7 @@ router.post("/comment", cors(), async (req, res) => {
   };
   try {
     const response = await axios.post(
-      `https://spilleetapi.spilleet.com/add-comment-new`,
+      `https://backend.spilleet.com/add-comment-new`,
       JSON.stringify(data),
       {
         headers: {
@@ -33,7 +33,7 @@ router.post("/comment", cors(), async (req, res) => {
     if (response.data.success === true) {
       res.status(200).json(response.data);
       const userObject = await axios.post(
-        `https://spilleetapi.spilleet.com/getUserSubscription`,
+        `https://backend.spilleet.com/getUserSubscription`,
         JSON.stringify(subobjdetails),
         {
           headers: {
